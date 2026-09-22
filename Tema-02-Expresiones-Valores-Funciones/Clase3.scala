@@ -72,17 +72,19 @@ object Clase3{
         val aprobado = notaFinal > 60 && faltas <= 4 
         println(aprobado)
         // CONDICIONALES ANIDADOS 
-        val num = 9
+        val num = -9
         val signo = if num > 0 then "POSITIVO"
             else if num < 0 then "NEGATIVO"
             else "CERO"
         val signo2 = if num <= 0 then {
             if num < 0 then "NEGATIVO"
             else "CERO"
-            num + num
         }
         else "POSITIVO"
         println(signo2)
-
+        // Crear 3 valores num1, num2, num3
+        // Crear un valor medio que sea igual a 
+        // el número del medio si es que ordenaramos
+        // num1, num2 y num3 en orden decreciente
     }
 }
