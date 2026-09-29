@@ -3,13 +3,14 @@ object Clase4 {
     // Es una funcion NO PURA porque...
     // 1. No devuelve ningun resultado
     // 2. Solo hace un efecto secundario
+    // 3. No devuelve el mismo resultado cuando lo llamo con los mismos parametros
     def saludar(nombre: String): Unit = {
         println(s"Hola $nombre")
     }
 
     // Ahora una funcion pura
     // 1. Si le envio los mismos parametros, me devuelve siempre el mismo resultado
-    // 2. No produce efectos secundarios
+    // 2. No produce efectos secundarios, ni altera valores externos
     def saludarPuro(nombre: String): String = { 
         s"Hola $nombre"
     }

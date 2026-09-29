@@ -4,7 +4,7 @@ object Clase4PreguntaExamen {
         println("funcionA") 
         x+1 
     } 
-    def funcionB(z: Int): Int = { 
+    def funcionB(z: => Int): Int = { 
         val x: Int = z + z 
         val y: Int = x * z 
         y 
