@@ -66,6 +66,8 @@ object Clase6 {
         println(s"Fibonacci de 20 es ${fibonacci(20)} y uso la funcion recursiva $contador")
         contador = 0
         println(s"Fibonacci de 30 es ${fibonacci(30)} y uso la funcion recursiva $contador")
+        contador = 0
+        println(s"Fibonacci de 50 es ${fibonacci(50)} y uso la funcion recursiva $contador")
         imprimir(3,10)
         println()
         println(imprimirPuro(3,10))
