@@ -37,21 +37,24 @@ object Clase14 {
         (num: Int) => num >= minimo
     }
 
+    def elevado(potencia: Int): (Int => Int) = {
+        def pow(a: Int, b: Int): Int = {
+            if b == 0 then 1
+            else a * pow(a,b-1)
+        } 
+        (num: Int) => pow(num,potencia)
+    }
+
     def main(args: Array[String]): Unit = {
-        val esMayorEdad = validarMinimo(18)
-        val esAdultoMayor = validarMinimo(60)
-        val puedeIrAlColegio = validarMinimo(5)
-        println(esMayorEdad(17))
-        println(esAdultoMayor(70))
-        println(puedeIrAlColegio(3))
+
         val duplicarAntiguo = (num: Int) => num * 2
         val duplicar = veces(2)
         val triplicarAntiguo: Int => Int = num => num * 3
         val triplicar = veces(3)
-        val cuadrado: Int => Int = num => num * num
+        val cuadradoAntiguo: Int => Int = num => num * num
         println(sumarTransformadas(5,8,duplicar))
         println(sumarTransformadas(2,6,triplicar))
-        println(sumarTransformadas(3,7,cuadrado))
+        println(sumarTransformadas(3,7,cuadradoAntiguo))
         println(sumarTransformadas(3,2,(num: Int) => num*num*num))
         println(calcular((a,b)=>a+b,6,3))
         println(calcular((a,b)=>a*b,6,3))
@@ -59,6 +62,27 @@ object Clase14 {
         val obtenerTipoDeCambio: () => Double = () => 11.87
         println(convertirDolaresABolivianos(100,obtenerTipoDeCambio))
         // Usando validarMinimo para crear funciones que validen datos
+        val esMayorEdad = validarMinimo(18)
+        val esAdultoMayor = validarMinimo(60)
+        val puedeIrAlColegio = validarMinimo(5)
+        println(esMayorEdad(17))
+        println(esAdultoMayor(70))
+        println(puedeIrAlColegio(3))
+        /*
+            EJERCICIO 2
 
+            Crear una funcion de orden superior llamada elevado
+            que reciba un numero y genere una función que reciba un
+            Int y devuelva un Int.
+
+            val cuadrado = elevado(2)
+            val cubo = elevado(3)
+            cuadrado(5) => 25
+            cubo(4) => 64
+        */
+        val cuadrado = elevado(2)
+        val cubo = elevado(3)
+        println(cuadrado(5))
+        println(cubo(4))
     }
 }
