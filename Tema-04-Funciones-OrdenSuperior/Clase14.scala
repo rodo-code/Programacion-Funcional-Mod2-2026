@@ -84,5 +84,6 @@ object Clase14 {
         val cubo = elevado(3)
         println(cuadrado(5))
         println(cubo(4))
+        println(elevado(5)(2))
     }
 }
