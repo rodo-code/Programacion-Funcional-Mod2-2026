@@ -14,14 +14,33 @@ object Clase16 {
         if exponente == 0 then 1
         else base * potencia(exponente-1)(base)
     }
-
+    // Formato devolviendo una función
     def vecesAntiguo(cantidad: Int): (Int => Int) = {
         (num: Int) => num * cantidad
     }
-
+    // Formato con currificación
     def veces(cantidad: Int)(num: Int): Int = {
-        cantidad*num
+        num * cantidad
     }
+
+    // EJERCICIO 1
+    // Generar una función currificada llamada limiteSuperior que reciba dos parametros
+    // un limite superior y un numero y devuelva un Boolean
+    // indicando si el numero es menor o igual al limiteSuperior
+    // ejemplos de uso:
+    // val validarNota = limiteSuperior(100)
+    // validarNota(54) --> true
+    // validarNota(120) --> false
+
+    // EJERCICIO 2
+    // Generar una función currificada llamada aplicarDescuento que reciba dos parametros
+    // un porcentaje de descuento (Double) y un monto (Double) y devuelva un Double
+    // que representa al monto aplicando el descuento
+    // ejemplos de uso:
+    // val descuento10 = aplicarDescuento(0.1)
+    // val mitadPrecio = aplicarDescuento(0.5)
+    // descuento10(90) --> 81.0
+    // mitadPrecio(25) --> 12.5
 
     def main(args: Array[String]): Unit = {
         val saludoFormal = crearSaludo("Buenos dias")
@@ -38,6 +57,7 @@ object Clase16 {
         val cubo = potencia(3)
         println(cuadrado(5))
         println(cubo(4))
+        val dobleAntiguo = vecesAntiguo(2)
         val doble = veces(2)
         val triple = veces(3)
         println(triple(6))
