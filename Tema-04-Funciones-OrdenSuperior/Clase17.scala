@@ -42,5 +42,27 @@ object Clase17 {
         // 1. Primero eleve un número al cuadrado
         // 2. Luego obtenga el digito de las unidades del número
         // 3. Finalmente sume 3 al digito obtenido
+
+        val suma3 = (num: Int) => num+3
+        val cuadrado = (num: Int) => num*num
+        val ultimoDigito = (num: Int) => num%10
+        
+        println(suma3(ultimoDigito(cuadrado(7))))
+        println(suma3.compose(ultimoDigito).compose(cuadrado)(7))
+        println(cuadrado.andThen(ultimoDigito).andThen(suma3)(7))
+
+        // EJERCICIO 2
+        // Hacer una funcion de orden superior llamada aplicarNVeces 
+        // que reciba una funcion y un numero N
+        // y de como resultado una funcion que aplique N veces la funcion enviada
+        def aplicarNVeces(funcion: (Int => Int), N: Int): (Int => Int) = {
+            if N == 0 then (num: Int) => num
+            else funcion.andThen(aplicarNVeces(funcion,N-1))
+        }
+
+        val cincoVecesSuma3 = aplicarNVeces(suma3,5)
+        val dosVecesCuadrado = aplicarNVeces(num => num*num,2)
+        println(cincoVecesSuma3(6))
+        println(dosVecesCuadrado(3))
     }
 }
